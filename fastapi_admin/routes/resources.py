@@ -95,7 +95,7 @@ async def update(
             obj = (
                 await model.filter(pk=pk)
                 .using_db(conn)
-                .select_for_update()
+                # .select_for_update()
                 .get()
                 .prefetch_related(*model_resource.get_m2m_field())
             )
